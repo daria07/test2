@@ -1,0 +1,31 @@
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px; } }
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px; }
+  .item {
+    margin-bottom: 40px;
+    max-width: 320px; } }
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px; }
+  .first {
+    padding-bottom: 40px; }
+  .item {
+    max-width: 300px;
+    margin-bottom: 0; }
+  .items {
+    justify-content: space-between; } }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px; }
+  .item {
+    max-width: 320px; } }
+
+@media (max-width: 350px) {
+  .item {
+    max-width: 90%; } }

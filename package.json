@@ -1,0 +1,27 @@
+{
+  "name": "newproject",
+  "version": "1.0.0",
+  "description": "My first gulp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daria",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "latest",
+    "node-sass": "^4.11.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "del": "^3.0.0"
+  }
+}

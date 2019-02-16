@@ -1,0 +1,283 @@
+@import "_fonts"
+
+$main-color: #1698d9
+$main-color-hover: #2ea8e6
+$selected-color: #d91667
+$selected-color-hover: #e62e7a
+$cat-background: #f2f2f2
+$yellow-color: #ffff66
+
+body
+    font-family: 'TrebuchetMS'
+    margin: 0
+    background: url(../img/prototype.jpg)
+
+*, ::after, ::before
+    box-sizing: border-box
+
+.container
+    margin-left: auto
+    margin-right: auto
+    width: 100%
+
+.first
+    padding-top: 40px
+
+.title
+    font-family: 'Exo2-0-Thin'
+    font-size: 36px
+    color: white
+    text-align: center
+    margin-bottom: 28px
+
+.items
+    overflow: hidden
+    display: flex
+    
+    flex-wrap: wrap
+    justify-content: space-around
+
+.item
+    max-width: 320px
+    width: 100%
+    margin-bottom: 30px
+
+.cat
+    position: relative
+    z-index: 1
+    border-radius: 10px
+    width: 100%
+
+.cat:hover
+    $main-color: $main-color-hover
+    cursor: pointer
+        
+    .cat-top 
+        border-right: 4px solid $main-color
+        border-top: 4px solid $main-color
+
+        .triangle
+            border-right: 19px solid $main-color
+            border-bottom: 19px solid $main-color
+    .cat-bottom
+        border-right: 4px solid $main-color
+        border-bottom: 4px solid $main-color
+        border-left: 4px solid $main-color
+
+        .cat-weight 
+            background-color: $main-color
+
+
+.cat.selected
+    $main-color: $selected-color
+
+    .cat-top 
+        border-right: 4px solid $main-color
+        border-top: 4px solid $main-color
+
+        .triangle
+            border-right: 19px solid $main-color
+            border-bottom: 19px solid $main-color
+
+    .cat-bottom
+        border-right: 4px solid $main-color
+        border-bottom: 4px solid $main-color
+        border-left: 4px solid $main-color
+
+        .cat-weight 
+            background-color: $main-color
+    &.hover:hover
+        $main-color: $selected-color-hover
+        .cat-top 
+            border-right: 4px solid $main-color
+            border-top: 4px solid $main-color
+
+            .triangle
+                border-right: 19px solid $main-color
+                border-bottom: 19px solid $main-color
+        .cat-bottom
+            border-right: 4px solid $main-color
+            border-bottom: 4px solid $main-color
+            border-left: 4px solid $main-color
+
+            .cat-weight 
+                background-color: $main-color
+
+.cat.disabled
+    $main-color: #b3b3b3
+    $color-disabled: rgba(242, 242, 242, 0.6)
+    cursor: default
+    .cat-top 
+        border-right: 4px solid $main-color
+        border-top: 4px solid $main-color
+        
+        div:last-child
+            color: #b3b3b3
+
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            width: 100%
+            height: 100%
+            background: $color-disabled
+            top: 0
+            left: 0
+            border-top-right-radius: 10px
+
+        .triangle
+            border-right: 19px solid $main-color
+            border-bottom: 19px solid $main-color
+
+            &:before
+                border: 17px solid transparent
+                border-right: 17px solid $color-disabled
+                border-bottom: 17px solid $color-disabled
+                content: ''
+                display: inline-block
+                position: absolute
+                left: -15px
+                top: -15px
+                z-index: 1
+
+    .cat-bottom
+        border-right: 4px solid $main-color
+        border-bottom: 4px solid $main-color
+        border-left: 4px solid $main-color
+
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            width: 100%
+            height: 100%
+            background: $color-disabled
+            top: 0
+            left: 0
+            border-bottom-right-radius: 10px
+            border-bottom-left-radius: 10px
+
+        .cat-title
+            color: #b3b3b3
+
+        .cat-weight 
+            background-color: $main-color
+
+    &+.text-bottom
+        color: $yellow-color
+
+.cat-top 
+    background: $cat-background
+    position: relative
+    width: calc(100% - 38px)
+    margin-left: 38px
+    height: 38px
+    border-top-right-radius: 10px
+    border-right: 4px solid $main-color
+    border-top: 4px solid $main-color
+
+    div:last-child
+        color: #666
+        margin-top: 16px
+        margin-left: 5px
+
+.triangle 
+    border: 19px solid transparent
+    border-right: 19px solid $main-color
+    border-bottom: 19px solid $main-color
+    content: ''
+    display: inline-block
+    position: absolute
+    left: -38px
+    z-index: 1
+    top: -4px   
+    margin: 0
+
+    &:after
+        border: 17px solid transparent
+        border-right: 17px solid $cat-background
+        border-bottom: 17px solid $cat-background
+        content: ''
+        display: inline-block
+        position: absolute
+        left: -15px
+        top: -15px
+
+.cat-title 
+    font-size: 48px
+    font-weight: 600
+    margin-bottom: 17px
+
+    div
+        font-size: 24px
+
+.cat-bottom
+    width: 100%
+    height: 442px
+    background-color: $cat-background
+    background-image: url(../img/cat.png)
+    background-size: auto
+    background-repeat: no-repeat
+    background-position: bottom left
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
+    border-right: 4px solid $main-color
+    border-bottom: 4px solid $main-color
+    border-left: 4px solid $main-color
+    padding-left: 38px
+    padding-top: 7px
+    position: relative
+    margin-bottom: 14px
+
+    &:before
+        content: ''
+        display: block
+        position: absolute
+        background: #f2f2f2
+        top: 0
+        width: 100%
+        height: 2px
+        left: 0
+
+.cat-info_text 
+    font-size: 14px
+    color: #666
+
+    span
+        font-weight: 600
+
+.cat-weight 
+    background-color: $main-color
+    width: 80px
+    height: 80px
+    border-radius: 50%
+    font-size: 42px
+    color: white
+    text-align: center
+    line-height: 1
+    padding-top: 10px
+    position: absolute
+    bottom: 10px
+    right: 10px
+
+    div
+        font-size: 21px
+
+.text-bottom 
+    color: white
+    font-size: 13px
+    text-align: center
+
+    a
+        color: $main-color
+        text-decoration: none
+        border-bottom: 1px dashed
+
+
+
+
+
+
+
+
+@import "media"
